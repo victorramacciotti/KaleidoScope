@@ -1,5 +1,5 @@
 div {
-    background-color: #205A8C;
+    background-color: #F6EDDE;
     height: 100%;
 }
 
@@ -9,9 +9,8 @@ app-menu{
 }
 
 .menu-option{
-    color: #F6EDDE;
+    color: 205A8C;
     height: 10vh;
-    border-bottom: 2px solid #0c3c66;
     align-items: center;
     align-content: center;
     text-align: center;
@@ -20,5 +19,6 @@ app-menu{
 }
 
 .menu-option:hover{
-    background-color: #0c3c66;
+    background-color: #205A8C;
+    color: #F2A0A0
 }
