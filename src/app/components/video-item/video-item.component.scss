@@ -1,0 +1,21 @@
+.example-card {
+    max-width: 300px;
+    border: none;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+  } 
+  img{
+    height: 200px;
+  }
+
+  .title{
+    font-weight: bold;
+  }
+
+
+  .thumbnail{
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+  }

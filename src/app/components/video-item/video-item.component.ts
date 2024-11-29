@@ -1,11 +1,12 @@
-import { Component, EventEmitter, input, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Video } from '../../../video';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-video-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './video-item.component.html',
   styleUrl: './video-item.component.scss'
 })
