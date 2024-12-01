@@ -1,0 +1,14 @@
+<div class="flex">
+    <h4>Resultados da pesquisa</h4>
+</div>
+
+<div class="grid" *ngIf="filteredVideos.length">
+    <div *ngFor="let video of filteredVideos">
+        <app-video-item  [video]="video"></app-video-item>
+    </div>
+
+    <div *ngIf="filteredVideos.length === 0">
+        <p>Nenhum vídeo encontrado.</p>
+      </div>
+    
+</div>
