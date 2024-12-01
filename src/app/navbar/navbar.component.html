@@ -8,7 +8,14 @@
         <app-search-bar></app-search-bar>
     </div>
     <div class="buttons">
-        <button (click)="login()">Login</button>
+            @if(auth.isAuthenticated$ | async){
+                <button  (click)="auth.logout()">Logout</button>
+                <img class="profile" [src]="profile?.picture" alt="{{ profile?.name }}">
+            } 
+            @else {
+                <button (click)="auth.loginWithRedirect()">Login</button>
+            }
+        
     </div>
     
 </div>
