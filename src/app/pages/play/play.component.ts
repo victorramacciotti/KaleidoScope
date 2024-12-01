@@ -3,8 +3,6 @@ import { YouTubePlayerModule } from '@angular/youtube-player'
 import { Video } from '../../../video';
 import { VideoServiceService } from '../../services/video-service.service';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { f } from '@fortawesome/free-regular-svg-icons'
 
 @Component({
   selector: 'app-play',
