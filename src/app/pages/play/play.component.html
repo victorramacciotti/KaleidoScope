@@ -1,1 +1,22 @@
-<p>play works!</p>
+
+<div class="flex-column">
+    <youtube-player videoId="{{videoId}}"
+        [playerVars]="{
+        autoplay: 1,
+        controls: 1,
+        rel: 0,
+        modestbranding: 0,
+        iv_load_policy: 3,
+        fs: 1,
+        }"
+        [height]="500"
+        [width]="800">
+    </youtube-player>
+    <div class="buttons"></div>
+    <h2>{{video.title}}</h2>
+    <div class="description">
+        <h3>Descrição:</h3>
+        <p>{{video.description}}</p>
+        <p>Publicado em: {{video.uploadedAt}}</p>
+    </div>
+</div>
