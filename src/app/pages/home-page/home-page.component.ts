@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { VideoItemComponent } from "../../components/video-item/video-item.component";
 import { Video } from '../../../video';
 import { VideoServiceService } from '../../services/video-service.service';
@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomePageComponent {
   videos: Video[] = [];
+  
 
   constructor(private videoService: VideoServiceService) { }
 
@@ -23,8 +24,5 @@ export class HomePageComponent {
     })
   }
 
-  watchVideo(video: Video) {
-    this.videoService.getVideoWatch(video).subscribe(() =>
-      (this.videos = this.videos.filter((v) => v.id != video.id)));
-  }
+  
 }
