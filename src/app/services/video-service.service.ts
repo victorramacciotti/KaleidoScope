@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject, map } from 'rxjs';
 import { Video } from '../../video';
 
 @Injectable({
@@ -15,7 +15,26 @@ export class VideoServiceService {
     return this.http.get<Video[]>(this.apiURL);
   }
 
-  getVideoWatch(video: Video): Observable<Video[]> {
-    return this.http.get<Video[]>(`${this.apiURL}/${video.id}`);
+  getVideoWatch(videoId: string): Observable<Video[]> {
+    return this.http.get<any>(this.apiURL).pipe(
+      map((data: any) => { console.log('Resposta do JSON:', data);
+        return data.find((video: Video) => video.videoId === videoId);
+      })
+    );
+  }
+
+  private searchTextSource = new BehaviorSubject<string>(''); 
+  searchText$ = this.searchTextSource.asObservable(); 
+
+  setSearchText(text: string): void {
+    this.searchTextSource.next(text); 
+  }
+
+  private videoIdSource = new BehaviorSubject<string>(''); 
+  videoId$ = this.videoIdSource.asObservable(); 
+
+  setVideoId(text: string): void {
+    console.log('Video ID recebido no serviço:', text);
+    this.videoIdSource.next(text); 
   }
 }
