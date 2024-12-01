@@ -5,5 +5,6 @@ export interface Video {
     url: string,
     thumbnail:string,
     views: number,
-    uploadedAt:string
+    uploadedAt:string,
+    videoId: string
 }
